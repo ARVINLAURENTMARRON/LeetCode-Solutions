@@ -1,0 +1,26 @@
+Runtime: 13ms | Beats 88.98%
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> num = new HashSet<>();
+        for (int x: nums) {
+            if (num. contains(x)) {
+                return true;
+            } 
+            num.add(x);
+        }
+        return false;
+    }
+}
+
+Runtime: 17ms | Beats 37.96%
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int x: nums) {
+            int count = freq.getOrDefault(x,0) + 1;
+            if (count == 2) return true;
+            freq.put(x, count);
+        }
+        return false;
+    }
+}
